@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.message) {
             callback('Unable to find location services', undefined);
         } else {
-            callback(undefined, 'The weather forecast is '+ body.weather[0].description + ' with max temperature being ' + body.main.temp_max 
+            callback(undefined, 'The weather forecast is '+ body.weather[0].description + ' with max temperature being ' + body.main.temp_max + ' with wind speed of ' + body.wind.speed
             )
         }
     })
