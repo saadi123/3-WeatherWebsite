@@ -5,6 +5,7 @@ const { hasSubscribers } = require('diagnostics_channel');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
+const port = process.env.PORT || 3000;
 const app = express();
 const publicDirectory = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -91,6 +92,6 @@ app.get('*', (req, res) => {
 });
 
 
-app.listen(3000, () => {
-    console.log('The server is up on port 3000');
+app.listen(port, () => {
+    console.log('The server is up on port ' + port);
 });
